@@ -20,4 +20,5 @@
 - Entity Framework Core
 - SQL Server
 
-- > 🔧 A modern Vue.js frontend is currently in development to complement the backend.
+## 🔧 WIP 
+-  A modern Vue.js frontend is currently in development to complement the backend.
