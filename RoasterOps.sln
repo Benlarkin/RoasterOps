@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoasterOps", "RoasterOps\RoasterOps.csproj", "{0DEE10F0-9C53-4C07-BDA5-7C52B02D0359}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoasterOpsAPI", "RoasterOps\RoasterOpsAPI.csproj", "{0DEE10F0-9C53-4C07-BDA5-7C52B02D0359}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
