@@ -14,7 +14,9 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend",
         policy => policy
-            .WithOrigins("http://localhost:5173") // your Vite dev server
+            .AllowAnyOrigin()
+            //.WithOrigins("http://localhost:5173",
+            //"http://localhost:5174") // Vite dev server
             .AllowAnyMethod()
             .AllowAnyHeader());
 });
@@ -39,9 +41,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseCors("AllowFrontend");
 
 app.UseHttpsRedirection();
-app.UseCors("AllowFrontend");
 app.UseAuthorization();
 
 app.MapControllers();

@@ -1,15 +1,15 @@
-<template>
-    <div id="app">
-    <nav>
-        <router-link to="/inventory">Inventory</router-link> |
-    <router-link to="/orders">Orders</router-link>
-    </nav>
-    <router-view />
-    </div>
-    </template>
+<script setup>
+import AppTopbar from "./components/AppTopbar.vue";
+import AppFooter from "./components/AppFooter.vue";
+import ProductOverviewWidget from "./components/dashboard/ProductOverviewWidget.vue";
+</script>
 
-    <style scoped>
-nav {
-  margin-bottom: 20px;
-}
-</style>
+<template>
+    <div class="layout-container">
+        <AppTopbar />
+        <div class="layout-grid">
+            <ProductOverviewWidget />
+        </div>
+        <AppFooter />
+    </div>
+</template>
