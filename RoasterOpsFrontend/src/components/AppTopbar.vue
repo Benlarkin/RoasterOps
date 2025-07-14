@@ -1,7 +1,7 @@
 <script setup>
 import { useLayout } from "../composables/useLayout";
 import AppConfig from "./AppConfig.vue";
-import logo from "../assets/logo.jpg";
+import logo from "../../public/favicon.png";
 const { isDarkMode, toggleDarkMode } = useLayout();
 </script>
 
@@ -9,14 +9,13 @@ const { isDarkMode, toggleDarkMode } = useLayout();
     <div class="topbar">
         <div class="topbar-container">
             <div class="topbar-brand flex items-center">
-<!--              <img-->
-<!--                  :src="logo"-->
-<!--                  alt="Coava Logo"-->
-<!--                  class="w-2 h-2 mr-2 object-contain"-->
-<!--              />-->
+              <img
+                  :src="logo"
+                  alt="Caffeine Logo"
+                  style="width:32px; height:auto; margin-right:0.5rem; object-fit:contain;"              />
                 <span class="topbar-brand-text">
                     <span class="topbar-title">RoasterOps</span>
-                    <span class="topbar-subtitle">Coava Inventory Management</span>
+                    <span class="topbar-subtitle">Caffeine Inventory Management</span>
                 </span>
             </div>
             <div class="topbar-actions">
@@ -46,6 +45,6 @@ const { isDarkMode, toggleDarkMode } = useLayout();
 </template>
 <style>
 .topbar-title {
-  font-weight: bold;  /* or “bold” */
+  font-weight: bold;
 }
 </style>
