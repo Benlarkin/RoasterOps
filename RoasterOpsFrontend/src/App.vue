@@ -2,6 +2,7 @@
 import AppTopbar from "./components/AppTopbar.vue";
 import AppFooter from "./components/AppFooter.vue";
 import ProductOverviewWidget from "./components/dashboard/ProductOverviewWidget.vue";
+import SalesTrendWidget from "./components/dashboard/SalesTrendWidget.vue";
 </script>
 
 <template>
@@ -9,6 +10,7 @@ import ProductOverviewWidget from "./components/dashboard/ProductOverviewWidget.
         <AppTopbar />
         <div class="layout-grid">
             <ProductOverviewWidget />
+          <SalesTrendWidget />
         </div>
         <AppFooter />
     </div>

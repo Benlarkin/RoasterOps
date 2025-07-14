@@ -20,27 +20,48 @@ public static class DbInitializer
         context.Products.AddRange(products);
         context.SaveChanges();
 
-        var order = new Order
-        {
-            CustomerName = "Stumptown Cafe Wholesale",
-            OrderDate = DateTime.UtcNow,
-            Status = OrderStatus.Pending,
-            LineItems = new List<OrderLineItem>
-            {
-                new OrderLineItem
-                {
-                    ProductId = products[1].ProductId, 
-                    Quantity = 15
-                },
-                new OrderLineItem
-                {
-                    ProductId = products[2].ProductId, 
-                    Quantity = 10
-                }
-            }
-        };
+        var rng  = new Random();
+        var year = DateTime.UtcNow.Year;
+        var orders = new List<Order>();
 
-        context.Orders.Add(order);
+        // seed 100 orders in Q1, 200 in Q2, 300 in Q3, 400 in Q4
+        var quarterSizes = new[] { 323, 300, 444, 375 };
+
+        for (int q = 1; q <= 4; q++)
+        {
+            int orderCount = quarterSizes[q - 1];
+            int startMonth = (q - 1) * 3 + 1;
+            int endMonth   = startMonth + 2;
+
+            for (int i = 0; i < orderCount; i++)
+            {
+                int month = rng.Next(startMonth, endMonth + 1);
+                int day   = rng.Next(1, DateTime.DaysInMonth(year, month) + 1);
+
+                var order = new Order
+                {
+                    CustomerName = $"Customer {rng.Next(1, 50)}",
+                    OrderDate = new DateTime(year, month, day, 0, 0, 0, DateTimeKind.Utc),
+                    Status       = OrderStatus.Fulfilled,
+                    LineItems    = new List<OrderLineItem>()
+                };
+
+                int itemCount = rng.Next(1, 4);
+                for (int j = 0; j < itemCount; j++)
+                {
+                    var product = products[rng.Next(products.Count)];
+                    order.LineItems.Add(new OrderLineItem
+                    {
+                        ProductId = product.ProductId,
+                        Quantity  = rng.Next(1, 20) // quantities in the hundreds
+                    });
+                }
+
+                orders.Add(order);
+            }
+        }
+
+        context.Orders.AddRange(orders);
         context.SaveChanges();
     }
 }

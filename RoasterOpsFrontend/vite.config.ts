@@ -10,5 +10,8 @@ export default defineConfig({
         Components({
             resolvers: [PrimeVueResolver()],
         }),
-    ],
+
+    ],server: {
+        open: true,
+    },
 });

@@ -19,6 +19,7 @@ declare module 'vue' {
     InputIcon: typeof import('primevue/inputicon')['default']
     InputText: typeof import('primevue/inputtext')['default']
     ProductOverviewWidget: typeof import('./src/components/dashboard/ProductOverviewWidget.vue')['default']
+    SalesTrendWidget: typeof import('./src/components/dashboard/SalesTrendWidget.vue')['default']
     Tag: typeof import('primevue/tag')['default']
   }
   export interface ComponentCustomProperties {

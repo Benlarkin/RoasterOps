@@ -41,6 +41,32 @@ public class OrdersController : ControllerBase
         return order;
     }
 
+    // GET: api/orders/with-details
+    [HttpGet("with-details")]
+    public async Task<ActionResult<IEnumerable<Order>>> GetOrdersWithDetails()
+    {
+        // pull every line‐item with its parent order and product
+        var lineItems = await _context.OrderLineItems
+            .Include(li => li.Order)
+                .ThenInclude(o => o.LineItems)
+                    .ThenInclude(li => li.Product)
+            .ToListAsync();
+
+        // group them back into orders
+        var orders = lineItems
+            .GroupBy(li => li.Order)
+            .Select(g =>
+            {
+                var ord = g.Key;
+                ord.LineItems = g.ToList();
+                return ord;
+            })
+            .ToList();
+
+        return orders;
+    }
+
+
     // POST: api/orders
     [HttpPost]
     public async Task<ActionResult<Order>> PostOrder(Order order)
