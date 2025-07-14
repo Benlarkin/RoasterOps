@@ -78,3 +78,8 @@ onMounted(fetchProducts);
     </div>
   </div>
 </template>
+<style>
+.products-title {
+  font-weight: bold;  /* or “bold” */
+}
+</style>

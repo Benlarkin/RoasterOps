@@ -44,3 +44,8 @@ const { isDarkMode, toggleDarkMode } = useLayout();
         </div>
     </div>
 </template>
+<style>
+.topbar-title {
+  font-weight: bold;  /* or “bold” */
+}
+</style>

@@ -1,6 +1,7 @@
 <template>
   <div class="layout-card col-item-2">
-  <form @submit.prevent="submitOrder" class="order-form">
+    <span class="order-title">Order Form</span>
+    <form @submit.prevent="submitOrder" class="order-form">
     <div class="p-fluid p-formgrid p-grid">
       <div class="p-field p-col-12 p-md-6">
         <label for="customerName">Customer Name</label>
@@ -9,7 +10,6 @@
     </div>
 
     <div class="line-items">
-      <h3>Items</h3>
       <div
           v-for="(item, idx) in lineItems"
           :key="idx"
@@ -145,5 +145,8 @@ async function submitOrder() {
   display: flex;
   align-items: flex-end;
   justify-content: center;
+}
+.order-title {
+  font-weight: bold;
 }
 </style>
