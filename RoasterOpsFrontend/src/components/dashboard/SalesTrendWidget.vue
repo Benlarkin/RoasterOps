@@ -85,7 +85,6 @@ onMounted(fetchOrders)
 </script>
 
 <style scoped>
-.layout-card { }
 .chart-header { margin-bottom:0.5rem }
 .chart-title { font-weight:bold }
 .chart-content { position:relative }

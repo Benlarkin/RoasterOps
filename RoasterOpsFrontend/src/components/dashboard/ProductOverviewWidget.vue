@@ -74,11 +74,6 @@ onMounted(fetchProducts);
         <Column field="stockLevel" header="Stock Level" sortable>
           <template #body="{ data }">{{ data.stockLevel }}</template>
         </Column>
-        <Column field="createdAt" header="Created At" sortable>
-          <template #body="{ data }">
-            {{ data.createdAt.toLocaleDateString() }}
-          </template>
-        </Column>
       </DataTable>
     </div>
   </div>
