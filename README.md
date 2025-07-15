@@ -1,7 +1,7 @@
 # RoasterOps ☕️
 
 [![RoasterOps Demo](snapshot.png)](https://www.youtube.com/watch?v=-m84u5mzNFQ)
-**RoasterOps** is a .NET-based internal tool designed to streamline and optimize coffee roasting operations. It provides an interface for managing batches, logging roasts, and coordinating production with ease.
+**RoasterOps** is a .NET-based internal tool designed to streamline and optimize coffee roasting operations. It provides an interface for managing batches, logging roasts, and coordinating production with ease. **Click the image above for a demo.**
 
 ---
 
